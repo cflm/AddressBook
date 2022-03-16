@@ -226,7 +226,6 @@ void modifyPerson(Addressbooks* abs) {
 		abs->personArray[ret].m_Addr = address;
 
 		cout << "联系人修改成功!" << endl;
-
 	}
 
 	system("pause");
