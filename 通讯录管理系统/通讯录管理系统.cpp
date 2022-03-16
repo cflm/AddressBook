@@ -4,7 +4,7 @@
 #define MAX 1000 // 最大人数
 
 using namespace std;
-
+// 版本v0.0.2
 
 //联系人结构体
 struct Person {
