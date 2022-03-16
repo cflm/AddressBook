@@ -167,7 +167,6 @@ void findPerson(Addressbooks* abs) {
 		cout << "年龄: " << abs->personArray[ret].m_Age << "\t";
 		cout << "电话: " << abs->personArray[ret].m_Phone << "\t";
 		cout << "住址: " << abs->personArray[ret].m_Addr << endl;
-
 	}
 
 	system("pause");
