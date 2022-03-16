@@ -18,8 +18,7 @@ struct Person {
 //通讯录结构体
 struct Addressbooks {
 	struct Person personArray[MAX];
-	int m_Size;
-	
+	int m_Size;	
 };
 
 
