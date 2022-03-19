@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#define MAX 1000 // 最大人数
+constexpr auto MAX = 1000; // 最大人数
 
 using namespace std;
 // 版本v0.0.2
@@ -9,8 +9,8 @@ using namespace std;
 //联系人结构体
 struct Person {
 	string m_Name;
-	int m_Sex;
-	int m_Age;
+	int m_Sex=0;
+	int m_Age=0;
 	string m_Phone;
 	string m_Addr;
 };
@@ -18,7 +18,7 @@ struct Person {
 //通讯录结构体
 struct Addressbooks {
 	struct Person personArray[MAX];
-	int m_Size;	
+	int m_Size=0;	
 };
 
 
@@ -239,8 +239,8 @@ void cleanPerson(Addressbooks* abs) {
 
 
 int main() {
-	Addressbooks abs;
-	abs.m_Size = 0;
+	Addressbooks *abs = new Addressbooks;
+	abs->m_Size = 0;
 
 	int select = 0;
 	while (true)
@@ -251,22 +251,22 @@ int main() {
 		switch (select)
 		{
 		case 1: //添加联系人
-			addPerson(&abs);
+			addPerson(abs);
 			break;
 		case 2: //显示联系人
-			showPerson(&abs);
+			showPerson(abs);
 			break;
 		case 3: //删除联系人
-			deletePerson(&abs);
+			deletePerson(abs);
 			break;
 		case 4: //查找联系人
-			findPerson(&abs);
+			findPerson(abs);
 			break;
 		case 5: //修改联系人
-			modifyPerson(&abs);
+			modifyPerson(abs);
 			break;
 		case 6: //清空联系人
-			cleanPerson(&abs);
+			cleanPerson(abs);
 			break;
 		case 0: //退出系统
 			cout << "欢迎下次使用" << endl;
@@ -279,5 +279,6 @@ int main() {
 	}
 
 	system("pause");
+	delete abs;
 	return 0;
 }
